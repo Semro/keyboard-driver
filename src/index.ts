@@ -1,40 +1,24 @@
-import { GMMK } from './devices'
-import { delay } from './utils'
+import { GMMK } from "./devices";
+import { delay } from "./utils";
 
 const main = async (): Promise<number> => {
-  let exitCode = 1
-  let driver: GMMK | undefined
+  let exitCode = 1;
+  let driver: GMMK | undefined;
 
   try {
-    driver = new GMMK()
-    // await driver.setBrightness(0);
-    // await delay(500);
-    // await driver.setBrightness(1);
-    // await delay(500);
-    // await driver.setBrightness(2);
-    // await delay(500);
-    // await driver.setBrightness(3);
+    driver = new GMMK();
 
-    // for (let i = 0; i < 19; i++) {
-    //   await delay(1000);
-    //   await driver.setLEDMode(i);
-    // }
-
-    await driver.setProfile(1);
+    await driver.setColor({ red: 0x00, green: 0xff, blue: 0x00 });
     await delay(2000);
-    await driver.setProfile(2);
-    await delay(2000);
-    await driver.setProfile(0);
   } catch (error) {
-    console.log((error as Error).message)
-    exitCode = -1
+    console.log((error as Error).message);
+    exitCode = -1;
   } finally {
     if (driver) {
-      driver.release()
+      driver.release();
     }
-    return exitCode
+    return exitCode;
   }
+};
 
-}
-
-main().then((exitCode) => process.exit(exitCode))
+main().then((exitCode) => process.exit(exitCode));
