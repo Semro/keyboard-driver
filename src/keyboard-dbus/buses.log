@@ -1,0 +1,30 @@
+got a message:  Message {
+  type: 2,
+  _sent: false,
+  _serial: 1,
+  path: undefined,
+  interface: undefined,
+  member: undefined,
+  errorName: undefined,
+  replySerial: 1,
+  destination: ':1.567',
+  sender: 'org.freedesktop.DBus',
+  signature: 's',
+  body: [ ':1.567' ],
+  flags: 1
+}
+got a message:  Message {
+  type: 4,
+  _sent: false,
+  _serial: 2,
+  path: '/org/freedesktop/DBus',
+  interface: 'org.freedesktop.DBus',
+  member: 'NameAcquired',
+  errorName: undefined,
+  replySerial: undefined,
+  destination: ':1.567',
+  sender: 'org.freedesktop.DBus',
+  signature: 's',
+  body: [ ':1.567' ],
+  flags: 1
+}
